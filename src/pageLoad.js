@@ -41,15 +41,15 @@ class HomePage {
         const navBar = document.createElement('nav')
         navBarBox.appendChild(navBar)
 
-        const pageLinkHome = document.createElement('li')
+        const pageLinkHome = document.createElement('button')
         pageLinkHome.innerHTML = 'Home'
         navBar.appendChild(pageLinkHome)
         
-        const pageLinkMenu = document.createElement('li')
+        const pageLinkMenu = document.createElement('button')
         pageLinkMenu.innerHTML = 'Menu'
         navBar.appendChild(pageLinkMenu)
 
-        const pageLinkContacts = document.createElement('li')
+        const pageLinkContacts = document.createElement('button')
         pageLinkContacts.innerHTML = 'Contacts'
         navBar.appendChild(pageLinkContacts)
     }
@@ -65,13 +65,64 @@ class HomePage {
         your favorite munchies. Drop on by and come get high!`
         content.appendChild(description)
 
-        const hours = document.createElement('div')
-        hours.id = 'hours'
-        hours.innerHTML = ''
-        content.appendChild(hours)
+        const hoursBox = document.createElement('div')
+        hoursBox.id = 'hoursBox'
+        content.appendChild(hoursBox)
+        const hoursHeading = document.createElement('h3')
+        hoursHeading.id = 'hoursHeading'
+        hoursHeading.innerHTML = 'Hours'
+        hoursBox.appendChild(hoursHeading)
+        this.createHoursSection()
+
+        const reviewsBox = document.createElement('div')
+        reviewsBox.id = 'reviewsBox'
+        content.appendChild(reviewsBox)
+        this.createReviewsSection()
 
         return content
     
+    }
+
+    createHoursSection(){
+        
+        const days = {'Sunday': '9AM-6PM', 'Monday': '9AM-6PM', 'Tuesday': '9AM-6PM', 
+        'Wednesday': '9AM-6PM', 'Thursday': '9AM-6PM', 'Friday': '9AM-6PM', 'Saturday': '9AM-6PM'}
+        const hoursBox = document.getElementById('hoursBox')
+        const hours = document.createElement('div')
+        hours.id = 'hours'
+        hoursBox.appendChild(hours)
+        
+        for (this.i=0; this.i < 7; this.i++){
+            const li = document.createElement('li')
+            li.id = Object.keys(days)[this.i]
+            li.innerHTML = `${Object.keys(days)[this.i]}: ${Object.values(days)[this.i]}`
+            hours.appendChild(li)
+        }
+
+    } 
+
+    createReviewsSection(){
+        
+        const reviewBox = document.getElementById('reviewsBox')
+
+        const reviewsTitle = document.createElement('h3')
+        reviewsTitle.innerHTML = 'Reviews'
+        reviewBox.appendChild(reviewsTitle)
+
+        const review = document.createElement('div')
+        review.id = 'review'
+        reviewBox.appendChild(review)
+
+        const reviewScore = document.createElement('p')
+        reviewScore.id = 'score'
+        reviewScore.innerHTML = '4/5'
+        review.appendChild(reviewScore)
+
+        const reviewText = document.createElement('p')
+        reviewText.id = 'reviewText'
+        reviewText.innerHTML = `This place has the dankest dank for the greenie high time foods. You can get it all, breakfast lunch and dinner.
+        Simply amazing.`
+        review.appendChild(reviewText)
     }
 
 }
