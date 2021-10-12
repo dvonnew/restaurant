@@ -23,9 +23,17 @@ class ContactsPage{
         const contactInfoBox = document.createElement('div')
         contactBox.appendChild(contactInfoBox)
 
-        const contactInfo = document.createElement('p')
-        contactInfo.innerHTML = `P: 555-555-6969 \n E: BigDsCafe@bigd.com`
-        contactInfoBox.appendChild(contactInfo)
+        const contactInfoPhone = document.createElement('p')
+        contactInfoPhone.innerHTML = `P: 555-555-6969`
+        contactInfoBox.appendChild(contactInfoPhone)
+
+        const contactInfoEmail = document.createElement('p')
+        contactInfoEmail.innerHTML = `E: BigDsCafe@bigd.com`
+        contactInfoBox.appendChild(contactInfoEmail)
+
+        const contactInfoLocation = document.createElement('p')
+        contactInfoLocation.innerHTML = `L: Denver, CO 80212`
+        contactInfoBox.appendChild(contactInfoLocation)
 
     }
 }
