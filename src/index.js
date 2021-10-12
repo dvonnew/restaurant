@@ -1,14 +1,36 @@
-import {HomePage} from './pageLoad'
+import {HomePage} from './homePageLoad'
+import {ContactsPage} from './contacts'
 
 let homePage = new HomePage
+let contacts = new ContactsPage
+homePage.pageLoad()
+homePage.loadBodyContent()
+
+const homeButton = document.getElementById('Home')
+homeButton.addEventListener('click', ()=>{
+    clearDom()
+    homePage.loadBodyContent()
+})
+
+const menuButton = document.getElementById('Menu')
+menuButton.addEventListener('click', ()=>{
+    clearDom()
+
+})
+
+const contactButton = document.getElementById('Contacts')
+contactButton.addEventListener('click', ()=>{
+    clearDom()
+    contacts.loadContactInfo()
+
+})
 
 function clearDom(){
 
     const content = document.getElementById('content')
+
     while (content.hasChildNodes()){
-        content.removeChild()
+        content.removeChild(content.lastChild)
     }
 
 }
-
-homePage.pageLoad()

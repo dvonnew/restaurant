@@ -8,6 +8,7 @@ class HomePage {
         this.header = document.createElement('header')
     }
 
+
     pageLoad(){
 
         this.loadHeaderContent()
@@ -15,8 +16,6 @@ class HomePage {
         const content = document.createElement('div')
         content.id = 'content'
         this.body.appendChild(content)
-
-        this.loadBodyContent()
     
     }
 
@@ -43,14 +42,17 @@ class HomePage {
 
         const pageLinkHome = document.createElement('button')
         pageLinkHome.innerHTML = 'Home'
+        pageLinkHome.id = 'Home'
         navBar.appendChild(pageLinkHome)
         
         const pageLinkMenu = document.createElement('button')
         pageLinkMenu.innerHTML = 'Menu'
+        pageLinkMenu.id ='Menu'
         navBar.appendChild(pageLinkMenu)
 
         const pageLinkContacts = document.createElement('button')
         pageLinkContacts.innerHTML = 'Contacts'
+        pageLinkContacts.id = 'Contacts'
         navBar.appendChild(pageLinkContacts)
     }
     
