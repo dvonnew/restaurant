@@ -1,8 +1,11 @@
 import {HomePage} from './homePageLoad'
 import {ContactsPage} from './contacts'
+import {MenuPage} from './menu'
 
 let homePage = new HomePage
 let contacts = new ContactsPage
+let menu = new MenuPage
+
 homePage.pageLoad()
 homePage.loadBodyContent()
 
@@ -15,6 +18,7 @@ homeButton.addEventListener('click', ()=>{
 const menuButton = document.getElementById('Menu')
 menuButton.addEventListener('click', ()=>{
     clearDom()
+    menu.loadBodyContent()
 
 })
 

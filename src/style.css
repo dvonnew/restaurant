@@ -1,4 +1,5 @@
 body, html{
+    height:100%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -87,6 +88,19 @@ li{
     text-align: left;
 }
 
+table{
+    height: 100%;
+    width: 80%;
+    border-collapse: collapse;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+tr{
+    height: 50px;
+    width: 100%;
+}
+
 #review{
     border: 1px grey solid;
     border-radius: 5px;
@@ -109,4 +123,8 @@ li{
     margin: 0px;
     padding: 0px;
     text-align: left;
+}
+
+#contactInfo{
+    position: top;
 }
