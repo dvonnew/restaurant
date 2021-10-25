@@ -106,9 +106,18 @@ class HomePage {
         const reviewsBox = document.createElement('div')
         reviewsBox.id = 'reviewsBox'
 
+        const reviewsTitleBox = document.createElement('div')
+        reviewsTitleBox.id = 'reviewsTitle'
+        reviewsBox.appendChild(reviewsTitleBox)
+
         const reviewsTitle = document.createElement('h3')
         reviewsTitle.innerHTML = 'Reviews'
-        reviewsBox.appendChild(reviewsTitle)
+        reviewsTitleBox.appendChild(reviewsTitle)
+
+        const addReviewButton = document.createElement('button')
+        addReviewButton.id = 'addReviewButton'
+        addReviewButton.innerHTML = 'Add Review'
+        reviewsTitleBox.appendChild(addReviewButton)
 
         const review = document.createElement('div')
         review.id = 'review'
@@ -127,6 +136,11 @@ class HomePage {
 
         return reviewsBox
     }
+
+    // addReview(){
+
+    //     const 
+    // }
 
 }
 

@@ -19,7 +19,7 @@ header{
     position:relative;
 }
 
-nav{
+#navBarBox{
     height: 30%;
     width: 300px;
     display: grid;
@@ -43,7 +43,6 @@ nav{
     height: 30%;
     min-width: 400px;
     max-width: 500px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +55,6 @@ nav{
     height: 300px;
     min-width: 500px;
     max-width: 600px;
-    border: 1px solid black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -96,9 +94,21 @@ table{
     grid-template-rows: auto;
 }
 
+thead{
+    font-size: 24px;
+    height: 30px;
+}
+
 tr{
     height: 50px;
     width: 100%;
+}
+
+#reviewsTitle{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 150px;
 }
 
 #review{
@@ -125,6 +135,17 @@ tr{
     text-align: left;
 }
 
-#contactInfo{
-    position: top;
+#contactBox{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+#contactInfoBox{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
