@@ -9,6 +9,7 @@ class HomePage {
 
     }
 
+
     pageLoad(){
 
         this.loadHeaderContent()
@@ -39,17 +40,17 @@ class HomePage {
         navBarBox.id = 'navBarBox'
         this.header.appendChild(navBarBox)
 
-        const pageLinkHome = document.createElement('button')
+        const pageLinkHome = document.createElement('p')
         pageLinkHome.innerHTML = 'Home'
         pageLinkHome.id = 'homeButton'
         navBarBox.appendChild(pageLinkHome)
         
-        const pageLinkMenu = document.createElement('button')
+        const pageLinkMenu = document.createElement('p')
         pageLinkMenu.innerHTML = 'Menu'
         pageLinkMenu.id ='menuButton'
         navBarBox.appendChild(pageLinkMenu)
 
-        const pageLinkContacts = document.createElement('button')
+        const pageLinkContacts = document.createElement('p')
         pageLinkContacts.innerHTML = 'Contacts'
         pageLinkContacts.id = 'contactsButton'
         navBarBox.appendChild(pageLinkContacts)
@@ -154,8 +155,10 @@ class HomePage {
         const reviewCell = reviewRow.insertCell()
         reviewCell.innerHTML = review
 
-        const scoreCell = reviewRow.insertCell()
-        scoreCell.innerHTML = `${score}/5`        
+        if (parseInt(score)<6){
+            const scoreCell = reviewRow.insertCell()
+            scoreCell.innerHTML = `${score}/5`   
+        }     
         
     }
 

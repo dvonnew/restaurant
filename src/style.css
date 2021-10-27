@@ -32,20 +32,17 @@ header{
 }
 
 #navBarBox{
-    height: 40px;
+    height: 30px;
     width: 400px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 
 }
 
 #homeButton, #menuButton, #contactsButton{
-    height: 40px;
-    width: 80px;
     font-size: 18px;
-    border: black;
-    border-radius: 5px;
-    background-color: rgb(115, 192, 115);
+    text-align: center;
 }
 
 #homeButton:hover, #menuButton:hover, #contactsButton:hover{
@@ -104,15 +101,12 @@ li{
 
 #reviewsBox{
     height: 300px;
-    display: flex;
-    flex-direction: row;
-   
+
 }
 
 #reviewsTable{
     width: 100%;
     height: 100%;
-    overflow-y: auto;
     border-collapse: collapse;
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -136,8 +130,13 @@ th{
     font-size: 24px;
 }
 
+#reviewsTBODY{
+    overflow-y: auto;
+}
+
 #reviewTR, #reviewRow{
     display: contents;
+    height: 50px;
 }
 
 #menuTable{
