@@ -4,10 +4,10 @@ import plateImage from './fine-dining.jpeg';
 class HomePage {
     
     constructor(){
-        this.body = document.querySelector('body')
+        this.layout = document.getElementById('layout')
         this.header = document.createElement('header')
-    }
 
+    }
 
     pageLoad(){
 
@@ -15,7 +15,9 @@ class HomePage {
 
         const content = document.createElement('div')
         content.id = 'content'
-        this.body.appendChild(content)
+        this.layout.appendChild(content)
+
+        const addReviewButton = document.getElementById('addReviewButton')
     
     }
 
@@ -27,7 +29,7 @@ class HomePage {
 
         this.loadNavBarContent()
 
-        this.body.appendChild(this.header)
+        this.layout.appendChild(this.header)
 
     }
 
@@ -37,23 +39,20 @@ class HomePage {
         navBarBox.id = 'navBarBox'
         this.header.appendChild(navBarBox)
 
-        const navBar = document.createElement('nav')
-        navBarBox.appendChild(navBar)
-
         const pageLinkHome = document.createElement('button')
         pageLinkHome.innerHTML = 'Home'
-        pageLinkHome.id = 'Home'
-        navBar.appendChild(pageLinkHome)
+        pageLinkHome.id = 'homeButton'
+        navBarBox.appendChild(pageLinkHome)
         
         const pageLinkMenu = document.createElement('button')
         pageLinkMenu.innerHTML = 'Menu'
-        pageLinkMenu.id ='Menu'
-        navBar.appendChild(pageLinkMenu)
+        pageLinkMenu.id ='menuButton'
+        navBarBox.appendChild(pageLinkMenu)
 
         const pageLinkContacts = document.createElement('button')
         pageLinkContacts.innerHTML = 'Contacts'
-        pageLinkContacts.id = 'Contacts'
-        navBar.appendChild(pageLinkContacts)
+        pageLinkContacts.id = 'contactsButton'
+        navBarBox.appendChild(pageLinkContacts)
     }
     
     loadBodyContent(){
@@ -70,6 +69,10 @@ class HomePage {
         content.appendChild(this.createHoursSection())
 
         content.appendChild(this.createReviewsSection())
+
+        addReviewButton.addEventListener('click', ()=>{
+            this.addReview()
+        })
 
         return content
     
@@ -101,46 +104,60 @@ class HomePage {
 
     } 
 
+
     createReviewsSection(){
         
         const reviewsBox = document.createElement('div')
         reviewsBox.id = 'reviewsBox'
 
-        const reviewsTitleBox = document.createElement('div')
-        reviewsTitleBox.id = 'reviewsTitle'
-        reviewsBox.appendChild(reviewsTitleBox)
+        const reviewsTable = document.createElement('table')
+        reviewsTable.id = 'reviewsTable'
+        reviewsBox.appendChild(reviewsTable)
 
-        const reviewsTitle = document.createElement('h3')
-        reviewsTitle.innerHTML = 'Reviews'
-        reviewsTitleBox.appendChild(reviewsTitle)
+        const tHead = document.createElement('thead')
+        tHead.id = 'reviewsTableHeader'
+        reviewsTable.appendChild(tHead)
 
         const addReviewButton = document.createElement('button')
         addReviewButton.id = 'addReviewButton'
         addReviewButton.innerHTML = 'Add Review'
-        reviewsTitleBox.appendChild(addReviewButton)
 
-        const review = document.createElement('div')
-        review.id = 'review'
-        reviewsBox.appendChild(review)
+        // Adding table heading including button
+        const tableHeading = tHead.insertRow()
+        const tableTitle = document.createElement('th')
+        tableTitle.id = 'reviewTitleTH'
+        tableHeading.appendChild(tableTitle)
+        tableHeading.id = 'reviewTR'
+        tableTitle.innerHTML = 'Reviews'
+        const tableAddReview = document.createElement('th')
+        tableAddReview.id = 'addReviewTH'
+        tableHeading.appendChild(tableAddReview)
+        tableAddReview.appendChild(addReviewButton)
 
-        const reviewScore = document.createElement('p')
-        reviewScore.id = 'score'
-        reviewScore.innerHTML = '4/5'
-        review.appendChild(reviewScore)
-
-        const reviewText = document.createElement('p')
-        reviewText.id = 'reviewText'
-        reviewText.innerHTML = `This place has the dankest dank for the greenie high time foods. You can get it all, breakfast lunch and dinner.
-        Simply amazing.`
-        review.appendChild(reviewText)
+        const tbody = document.createElement('tbody')
+        tbody.id = 'reviewsTBODY'
+        reviewsTable.appendChild(tbody)
 
         return reviewsBox
     }
 
-    // addReview(){
+    addReview(){
 
-    //     const 
-    // }
+        const reviewsTable = document.getElementById('reviewsTBODY')
+
+        let review = prompt('Please write review here:')
+        let score = prompt('Please provide a score of out of 5')
+
+        const reviewRow = reviewsTable.insertRow()
+        reviewRow.id = 'reviewRow'
+        
+        const reviewCell = reviewRow.insertCell()
+        reviewCell.innerHTML = review
+
+        const scoreCell = reviewRow.insertCell()
+        scoreCell.innerHTML = `${score}/5`        
+        
+    }
 
 }
 

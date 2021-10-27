@@ -16,8 +16,6 @@ class MenuPage{
             'Salmon Burger': 'Homemade salmon burger thrown together with fresh salmon, lemon juice, green onions, and panko breadcrumbs, on that homemade brioche  -  $11.50'
 
         }
-
-
     }
 
     loadBodyContent(){
@@ -28,8 +26,10 @@ class MenuPage{
     createMenu (){
 
         const table = document.createElement('table')
+        table.id = 'menuTable'
         
         const tHead = document.createElement('thead')
+        tHead.id = 'menutHead'
         tHead.innerHTML= 'Menu'
         table.appendChild(tHead)
 

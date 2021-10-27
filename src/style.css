@@ -7,6 +7,18 @@ body, html{
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", 
     "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     overflow-y: auto;
+    background-image: linear-gradient(to bottom, rgb(115, 192, 115), white);
+}
+
+#layout{
+    height:100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", 
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", 
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    overflow-y: auto;
 }
 
 header{
@@ -20,15 +32,27 @@ header{
 }
 
 #navBarBox{
-    height: 30%;
-    width: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    height: 40px;
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
 
 }
 
+#homeButton, #menuButton, #contactsButton{
+    height: 40px;
+    width: 80px;
+    font-size: 18px;
+    border: black;
+    border-radius: 5px;
+    background-color: rgb(115, 192, 115);
+}
+
+#homeButton:hover, #menuButton:hover, #contactsButton:hover{
+    color: white;
+}
+
 #content{
-    margin-top: 10px;
     height: 80%;
     width: 100%;
     display: flex;
@@ -36,33 +60,25 @@ header{
     align-items: center;
     flex-direction: column;
     position:relative;
+    border-radius: 5px;
 
 }
 
+#description, #hoursBox, #reviewsBox, #contactBox {
+    max-width: 80%;
+    min-width: 700px;
+    /* background-color: white; */
+    padding: 5px;
+}
+
 #description, #hoursBox{
-    height: 30%;
-    min-width: 400px;
-    max-width: 500px;
+    min-height: 90px;
+    max-height: 30%;  
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    position: relative;
-}
-
-#reviewsBox{
-    height: 300px;
-    min-width: 500px;
-    max-width: 600px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    overflow-y: auto;
-    margin: 0px;
-    padding: 0px;
     position: relative;
 }
 
@@ -75,7 +91,7 @@ h3{
 }
 
 #hours{
-    width: 100%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -86,7 +102,45 @@ li{
     text-align: left;
 }
 
-table{
+#reviewsBox{
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+   
+}
+
+#reviewsTable{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border-collapse: collapse;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+th{
+    height: 50px;
+}
+
+#reviewTitleTH{
+    text-align: left;
+}
+
+#addReviewTH{
+    text-align: right;
+}
+
+#reviewsTableHeader{
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+}
+
+#reviewTR, #reviewRow{
+    display: contents;
+}
+
+#menuTable{
     height: 100%;
     width: 80%;
     border-collapse: collapse;
@@ -94,7 +148,7 @@ table{
     grid-template-rows: auto;
 }
 
-thead{
+#menuthead{
     font-size: 24px;
     height: 30px;
 }
@@ -104,21 +158,8 @@ tr{
     width: 100%;
 }
 
-#reviewsTitle{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 150px;
-}
-
-#review{
-    border: 1px grey solid;
-    border-radius: 5px;
-    width: 90%;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    
+thead, tbody{
+    display: contents;
 }
 
 #score{
@@ -137,7 +178,6 @@ tr{
 
 #contactBox{
     height: 100%;
-    width: 100%;
     display: flex;
     justify-content: flex-start;
     

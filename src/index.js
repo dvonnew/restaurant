@@ -9,20 +9,20 @@ let menu = new MenuPage
 homePage.pageLoad()
 homePage.loadBodyContent()
 
-const homeButton = document.getElementById('Home')
+const homeButton = document.getElementById('homeButton')
 homeButton.addEventListener('click', ()=>{
     clearDom()
     homePage.loadBodyContent()
 })
 
-const menuButton = document.getElementById('Menu')
+const menuButton = document.getElementById('menuButton')
 menuButton.addEventListener('click', ()=>{
     clearDom()
     menu.loadBodyContent()
 
 })
 
-const contactButton = document.getElementById('Contacts')
+const contactButton = document.getElementById('contactsButton')
 contactButton.addEventListener('click', ()=>{
     clearDom()
     contacts.loadContactInfo()
