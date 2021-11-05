@@ -20,20 +20,22 @@ class MenuPage{
 
     loadBodyContent(){
         const content = document.getElementById('content')
+        
         content.appendChild(this.createMenu())
     }
 
     createMenu (){
 
         const table = document.createElement('table')
+        const tHead = document.createElement('thead')
+        const tbody = document.createElement('tbody')
+
         table.id = 'menuTable'
         
-        const tHead = document.createElement('thead')
         tHead.id = 'menutHead'
         tHead.innerHTML= 'Menu'
         table.appendChild(tHead)
 
-        const tbody = document.createElement('tbody')
         table.appendChild(tbody)
 
         for (this.i=0; this.i< 11; this.i++){
